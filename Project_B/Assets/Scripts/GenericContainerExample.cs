@@ -17,22 +17,22 @@ public class GenericContainerExample : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (intput.GetKeyDown(KeyCode.Alpha1))                  //키보드 1버튼
+        if (Input.GetKeyDown(KeyCode.Alpha1))                  //키보드 1버튼
         {
             intContainer.Add(Random.Range(0, 100));             //0 ~ 100 랜덤 (int)
-            DesplayContainerItems(intContainer);
+            DisplayContainerItems(intContainer);
         }
-        if (intput.GetKeyDown(KeyCode.Alpha2))                  //키보드 2버튼
+        if (Input.GetKeyDown(KeyCode.Alpha2))                  //키보드 2버튼
         {
             string randomString = "item " + Random.Range(0, 100);   //0 ~ 100 랜덤 (string)
-            intContainer.Add(randomString);                         //문자열 -> item 0 ~ 100
-            DesplayContainerItems(stringContainer);
+            stringContainer.Add(randomString);                         //문자열 -> item 0 ~ 100
+            DisplayContainerItems(stringContainer);
         }
     }
 
     private void DisplayContainerItems<T>(GenericContainer<T> container)
     {//생성한 컨테이너를 Debug.Log에서 볼 수 있게 만든 함수
-        T[] items = container.GetItems();
+        T[] items = container.Getltems();
         string temp = "";
         for (int i = 0; i < items.Length; i++) //컨테이너를 순환해서 배열값을 문자열로 변환
         {
